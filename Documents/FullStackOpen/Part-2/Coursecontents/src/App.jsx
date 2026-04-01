@@ -1,3 +1,4 @@
+
 const App = () => {
   const course = {
     id: 1,
