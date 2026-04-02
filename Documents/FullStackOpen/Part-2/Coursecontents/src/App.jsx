@@ -1,3 +1,4 @@
+import Header from "./components/Header"
 
 const App = () => {
   const course = {
@@ -22,7 +23,7 @@ const App = () => {
     ]
   }
 
-  return <Course course={course} />
+  return <Header course={course} />
 }
 
 export default App
