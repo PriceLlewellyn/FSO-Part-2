@@ -1,4 +1,4 @@
-import Header from "./components/Header"
+import Course from "./components/Course"
 
 const App = () => {
   const course = {
@@ -23,7 +23,11 @@ const App = () => {
     ]
   }
 
-  return <Header course={course} />
+  return (
+    <div>
+      <Course course={course}/>
+    </div>
+  ) 
 }
 
 export default App
