@@ -6,13 +6,25 @@ const App = () => {
   ]) 
   const [newName, setNewName] = useState('')
 
+
 const addPerson = (event) => {
   event.preventDefault()
-  const nameObject = {
-    name: newName,
+
+  const trimmednewName = newName.trim()
+
+  const isDuplicate = persons.some(
+    (persons) => persons.name.trim().toLowerCase() === trimmednewName.toLowerCase()
+  )
+  if(isDuplicate) {
+    alert(`${trimmednewName} is already added to phonebook`)
+    return;
+  } else {
+    const nameObject = {
+    name: newName
   }
-  setPersons(persons.concat(nameObject))
-  setNewName('')
+    setPersons(persons.concat(nameObject))
+    setNewName('')
+  }
 }
 
 const handlePersonUpdate = (event) => {
