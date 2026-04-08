@@ -35,12 +35,10 @@ const handlePersonUpdate = (event) => {
         </div>
       </form>
       <h2>Numbers</h2>
-      <div>debug: {newName}
-      <ul>
+      <div>
         {persons.map(person => 
           <li key={person.name}>{person.name}</li>
         )}
-      </ul>
       </div>
     </div>
   )
