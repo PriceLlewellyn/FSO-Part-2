@@ -8,7 +8,12 @@ const App = () => {
 
 const addPerson = (event) => {
   event.preventDefualt()
-  console.log('button clicked'.event.target)
+  const nameObject = {
+    name: newName,
+    id: String(persons.length + 1)
+  }
+  setPersons(persons.concat(nameObject))
+  setNewName('')
 }
 
 const handlePersonUpdate = (event) => {
