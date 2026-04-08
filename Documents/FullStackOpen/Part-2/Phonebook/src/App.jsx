@@ -4,20 +4,34 @@ const App = () => {
   const [persons, setPersons] = useState([
     { name: 'Arto Hellas' }
   ]) 
-  const [newName, setNewName] = useState('')
+  const [newName, setNewName] = useState('')//controls the form input element
+
+const addPerson = (event) => {
+  event.preventDefualt()
+  console.log('button clicked'.event.target)
+}
+
+const handlePersonUpdate = (event) => {
+  console.log(event.target.value)
+  setNewName(event.target.value)
+}
 
   return (
     <div>
       <h2>Phonebook</h2>
-      <form>
+      <form onSubmit={addPerson}>
         <div>
-          name: <input />
+          name: <input 
+          value={newName}
+          onChange={handlePersonUpdate}
+          />
         </div>
         <div>
-          <button type="submit">add</button>
+          <button type="submit" >add</button>
         </div>
       </form>
       <h2>Numbers</h2>
+      <div>debug: {newName}</div>
       ...
     </div>
   )
