@@ -4,13 +4,12 @@ const App = () => {
   const [persons, setPersons] = useState([
     { name: 'Arto Hellas' }
   ]) 
-  const [newName, setNewName] = useState('')//controls the form input element
+  const [newName, setNewName] = useState('')
 
 const addPerson = (event) => {
-  event.preventDefualt()
+  event.preventDefault()
   const nameObject = {
     name: newName,
-    id: String(persons.length + 1)
   }
   setPersons(persons.concat(nameObject))
   setNewName('')
@@ -36,8 +35,13 @@ const handlePersonUpdate = (event) => {
         </div>
       </form>
       <h2>Numbers</h2>
-      <div>debug: {newName}</div>
-      ...
+      <div>debug: {newName}
+      <ul>
+        {persons.map(person => 
+          <li key={person.name}>{person.name}</li>
+        )}
+      </ul>
+      </div>
     </div>
   )
 }
